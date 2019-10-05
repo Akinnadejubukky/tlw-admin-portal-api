@@ -90,6 +90,13 @@ router.post('/answer', async (req, res) => {
   //   dedication
   // } = req.body;
 
+  const candidate = await Answer.find({ email: req.body.email });
+  if (candidate) {
+    return res.send(`
+    <h1>You have already sent in your response.</h1>
+    <h3>You can join our <a href='https://chat.whatsapp.com/IVHPHGDqCY15SvoiC21PgO'>Whatsapp Group Link</a> to listen for a feedback from us and engage in group dicussions</h3>`
+    )
+  }
   const answer = await Answer.create(req.body);
   res.send(`
   <h1>Thank You. Form Submitted Successfully.</h1>
