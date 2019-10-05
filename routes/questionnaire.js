@@ -91,7 +91,7 @@ router.post('/answer', async (req, res) => {
   // } = req.body;
 
   const answer = await Answer.create(req.body);
-  res.redirect('http://google.com')
+  res.send('<h1>Thank You. Form Submitted Successfully.</h1><h4>You\'d hear back from us</h4>')
 });
 
 module.exports = router;
