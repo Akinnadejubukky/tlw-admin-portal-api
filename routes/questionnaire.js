@@ -90,7 +90,10 @@ router.post('/answer', async (req, res) => {
   //   dedication
   // } = req.body;
 
-  const candidate = await Answer.find({ email: req.body.email });
+  console.log(req.body.email)
+
+  const candidate = await Answer.findOne({ email: req.body.email });
+  console.log(candidate)
   if (candidate) {
     return res.send(`
     <h1>You have already sent in your response.</h1>
