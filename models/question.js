@@ -24,6 +24,10 @@ const questionSchema = new Schema({
   score: {
     type: Number,
     default: 1
+  },
+  name: {
+    type: String,
+    required: false
   }
 });
 
