@@ -91,7 +91,10 @@ router.post('/answer', async (req, res) => {
   // } = req.body;
 
   const answer = await Answer.create(req.body);
-  res.send('<h1>Thank You. Form Submitted Successfully.</h1><h4>You\'d hear back from us</h4>')
+  res.send(`
+  <h1>Thank You. Form Submitted Successfully.</h1>
+  <h3>You can join our <a href='https://chat.whatsapp.com/IVHPHGDqCY15SvoiC21PgO'>Whatsapp Group Link</a> to listen for a feedback from us and engage in group dicussions</h3>`
+  )
 });
 
 module.exports = router;
